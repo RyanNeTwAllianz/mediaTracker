@@ -1,12 +1,59 @@
-# React + Vite
+# 📊 Media Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Media Tracker** est une extension Chrome qui détecte et liste les "media hits" (requêtes réseau liées à des plateformes publicitaires ou sociales).
 
-Currently, two official plugins are available:
+> 🧪 L'extension n'est pas encore publiée officiellement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Fonctionnalités
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Interception des requêtes réseau.
+- Identification automatique de plateformes médias (TikTok, Snapchat, Facebook, etc.).
+- Affichage des hits dans une interface de type accordéon.
+- Bouton pour réinitialiser les hits.
+
+---
+
+## 🛠️ Installation locale
+
+1. Clonez le projet :
+
+```bash
+   git clone https://github.com/RyanNeTwAllianz/mediaTracker.git
+```
+   
+```bash 
+   cd media-tracker
+```
+
+
+2. Installez les dépendances :
+
+```bash 
+   npm i
+```
+
+3. Construisez l’extension :
+
+```bash 
+   npm run build
+```
+
+4. Chargez l’extension dans Chrome :
+
+- Ouvrez chrome://extensions
+
+- Activez le mode développeur (coin supérieur droit)
+
+- Cliquez sur Charger l’extension non empaquetée (coin supérieur gauche)
+
+- Sélectionnez le dossier dist
+
+5. TODO
+
+- ✅ Groupement des hits par media
+
+- ⏳ Export CSV
+
+- ⏳ UI responsive
