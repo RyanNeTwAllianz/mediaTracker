@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import Line from './components/Line'
 import Title from './components/Title'
 import GetHits from './utils/GetHits'
-import Accordion from './components/Accordion'
 import GroupHitsByMedia from './utils/GroupHitsByMedia'
 import ClearHits from './utils/ClearHits'
+import Hit from './components/Hit'
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const newHits = GetHits((newHits) => {
-      setHits(newHits)
+      setHits(GroupHitsByMedia(newHits))
     })
     return newHits
   }, [])
@@ -22,27 +22,17 @@ function App() {
       <div className='container'>
         <Title />
         <Line />
-        <button
-          onClick={() => {ClearHits(); setHits([])}}
-        >
+        <button onClick={() => {ClearHits(); setHits([])}} >
           Clear Hits
+        </button>
+        <button onClick={() => {}} >
+          Extract Hits
         </button>
         <Line />
       </div>
 
       <div className='container'>
-      {
-        GroupHitsByMedia(hits).map(
-          (i, index) => 
-            <Accordion title={`${i.media} - ${i.hits.length}`} key={index}>
-              {i.hits.map((hit, idx) => (
-                <pre key={idx} style={{ fontSize: '12px' }}>
-                  {JSON.stringify(hit, null, 2)}
-                </pre>
-              ))}
-            </Accordion>
-        )
-      }
+        <Hit hit={hits} />
       </div>
     </>
   )

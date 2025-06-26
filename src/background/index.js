@@ -19,8 +19,6 @@ chrome.webRequest.onBeforeRequest.addListener(
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'clearHits') {
     arr = []
-    console.log('arr vidé !')
-
     sendResponse({ status: 'success', message: 'Hits cleared' })
   }
 })

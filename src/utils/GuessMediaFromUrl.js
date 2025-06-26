@@ -25,6 +25,8 @@ const GuessMediaFromUrl = (url) => {
         return 'OUTBRAIN'
     } else if (url.includes('powerspace')) {
         return 'POWER_SPACE'
+    } else if (url.includes('time1.me')) {
+        return 'TIMEONE'
     }
 
     return null
